@@ -26,6 +26,7 @@
     <script>
         let previousPrice = null;
         let soundPlayed = false;
+        let audioElement;
 
         async function fetchBTCPrice() {
             try {
@@ -64,14 +65,24 @@
 
         function playSound() {
             const audioContext = new (window.AudioContext || window.webkitAudioContext)();
-            const audioElement = new Audio('100.mp3');
             const track = audioContext.createMediaElementSource(audioElement);
             track.connect(audioContext.destination);
             audioElement.play();
         }
 
+        document.addEventListener('DOMContentLoaded', () => {
+            audioElement = new Audio('100.mp3');
+            audioElement.load();
+        });
+
+        document.addEventListener('keydown', (event) => {
+            if (event.key === 's') {
+                playSound();
+            }
+        });
+
         fetchBTCPrice();
-        setInterval(fetchBTCPrice, 30000);
+        setInterval(fetchBTCPrice, 30000); // Fetch every 60 seconds
     </script>
 </body>
 </html>
