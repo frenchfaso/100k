@@ -8,6 +8,7 @@ Ever wondered if Bitcoin has hit 100k yet? Well, this app won't tell you that, b
 - Fetches the latest BTC price in realtime ⏱️
 - Displays the price in a font size that could be seen from space 🌌
 - Changes color to green if the price goes up and red if it goes down 📈📉
+- Plays a celebratory sound if BTC hits 100k 🔊🎉
 
 ## Usage
 1. Open the `index.html` file in your favorite browser.
